@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Documentation Technique - AutoFacture Asana</title>
+    <link rel="stylesheet" href="documentation.css" />
+  </head>
+  <body>
+    <h1>Documentation Technique – AutoFacture Asana v1.0</h1>
+    <p>
+      Ce document décrit le fonctionnement technique de l'application
+      AutoFacture Asana.
+    </p>
+    <h2>Architecture</h2>
+    <ul>
+      <li><strong>Langage :</strong> Python 3.11</li>
+      <li><strong>Interface :</strong> Tkinter</li>
+      <li>
+        <strong>Connexion IMAP :</strong> Utilisation d'imaplib pour récupérer
+        les e-mails depuis la boîte IONOS
+      </li>
+      <li><strong>API Asana :</strong> SDK officiel `asana.Client`</li>
+    </ul>
+    <h2>Fonctionnement</h2>
+    <ol>
+      <li>
+        Connexion au serveur IMAP et récupération des mails
+        <strong>non lus</strong> (UNSEEN) dans le dossier
+        <code>INBOX/02-STRIPE</code>
+      </li>
+      <li>Filtrage des mails dont l’objet commence par “Votre facture...”</li>
+      <li>Extraction du numéro de facture et du nom du client</li>
+      <li>
+        Chargement de toutes les tâches du projet Asana, avec recherche de tous
+        les numéros de facture dans les titres de tâche
+      </li>
+      <li>
+        Mise à jour du champ personnalisé <code>Paiement CG FRANCE</code> à
+        "Payé" pour chaque facture trouvée
+      </li>
+    </ol>
+    <h2>Dépendances</h2>
+    <ul>
+      <li>imaplib</li>
+      <li>email</li>
+      <li>BeautifulSoup4</li>
+      <li>asana</li>
+      <li>tkinter</li>
+      <li>dotenv</li>
+    </ul>
+    <h2>Configuration</h2>
+    <p>Le fichier <code>.env</code> contient les clés suivantes :</p>
+    <pre>
+IMAP_SERVER=imap.ionos.fr
+IMAP_PORT=993
+IMAP_USERNAME=...
+IMAP_PASSWORD=...
+ASANA_API_TOKEN=...
+PROJECT_GID=...
+</pre
+    >
+    <p>Version : 1.0 – Maxime Lacoste – 2025</p>
+  </body>
+</html>

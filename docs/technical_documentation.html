@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Technical Documentation - AutoFacture Asana</title>
+    <link rel="stylesheet" href="documentation.css" />
+  </head>
+  <body>
+    <h1>Technical Documentation – AutoFacture Asana v1.0</h1>
+    <p>
+      This documentation explains the internal logic of the AutoFacture Asana
+      automation app.
+    </p>
+    <h2>Stack</h2>
+    <ul>
+      <li>Language: Python 3.11</li>
+      <li>UI: Tkinter</li>
+      <li>Email Reading: imaplib + email</li>
+      <li>API: Asana official SDK</li>
+    </ul>
+    <h2>Workflow</h2>
+    <ol>
+      <li>Connect to IMAP folder INBOX/02-STRIPE and read UNSEEN messages</li>
+      <li>Extract invoice number (Fxxxxxxxx-xxxx) and client name</li>
+      <li>Retrieve all tasks from Asana project</li>
+      <li>Match each invoice found in task name (even multiple per task)</li>
+      <li>
+        Update the custom field “Paiement CG FRANCE” to mark invoice as paid
+      </li>
+      <h2>Dependencies</h2>
+      <ul>
+        <li>imaplib</li>
+        <li>email</li>
+        <li>BeautifulSoup4</li>
+        <li>asana</li>
+        <li>tkinter</li>
+        <li>dotenv</li>
+      </ul>
+    </ol>
+    <h2>Environment Configuration</h2>
+    <pre>
+.env:
+IMAP_SERVER=...
+IMAP_USERNAME=...
+ASANA_API_TOKEN=...
+PROJECT_GID=...</pre
+    >
+    <footer>© 2025 – Maxime Lacoste</footer>
+  </body>
+</html>

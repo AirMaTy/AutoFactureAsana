@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Documentation Utilisateur - AutoFacture Asana</title>
+    <link rel="stylesheet" href="documentation.css" />
+  </head>
+  <body>
+    <h1>Documentation Utilisateur – AutoFacture Asana v1.0</h1>
+    <p>
+      Cette application permet de synchroniser automatiquement les factures
+      payées (emails Stripe/Axonaut) avec Asana.
+    </p>
+    <h2>Fonctionnalités</h2>
+    <ul>
+      <li>Lecture des e-mails non lus dans INBOX/02-STRIPE</li>
+      <li>Extraction des factures avec numéro FXXXXXXXX-XXXX</li>
+      <li>
+        Mise à jour du champ personnalisé “Paiement CG FRANCE” dans les tâches
+        Asana
+      </li>
+      <li>
+        Interface graphique avec bouton unique :
+        <strong>Scanner les e-mails</strong>
+      </li>
+      <li>
+        Affichage des actions dans une zone de logs (couleur verte = OK, rouge =
+        erreur)
+      </li>
+    </ul>
+    <h2>Utilisation</h2>
+    <ol>
+      <li>Lancer l’application</li>
+      <li>Cliquer sur “Scanner les e-mails”</li>
+      <li>Les mises à jour s’effectuent automatiquement</li>
+    </ol>
+    <h2>Comportement</h2>
+    <ul>
+      <li>Uniquement les mails non lus (UNSEEN) sont traités</li>
+      <li>
+        Un mail peut contenir une facture qui correspond à une tâche unique ou
+        une tâche contenant plusieurs factures
+      </li>
+      <li>Pas de suppression ni déplacement de mail</li>
+      <li>Tout est automatique</li>
+    </ul>
+    <h2>Contact</h2>
+    <p>
+      GitHub : <a href="https://github.com/AirMaTy">AirMaTy</a><br />Email :
+      maxime.lacoste.ecole@gmail.com
+    </p>
+  </body>
+</html>
